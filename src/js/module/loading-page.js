@@ -1,3 +1,10 @@
+const createLogo = () => {
+  const logo = document.createElement("img");
+  logo.src =
+    "https://laboussole-larochelle.fr/wp-content/uploads/2021/07/logoPlan-de-travail-1.svg";
+  return logo;
+};
+
 const createNavBar = () => {
   const navBar = document.createElement("nav");
 
@@ -23,6 +30,7 @@ const createNavBar = () => {
 const createHeader = () => {
   const header = document.createElement("header");
 
+  header.appendChild(createLogo());
   header.appendChild(createNavBar());
   return header;
 };
