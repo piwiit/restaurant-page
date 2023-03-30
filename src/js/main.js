@@ -1,7 +1,4 @@
-import '../scss/style.scss';
+import "../scss/style.scss";
+import createHeader from "./module/loading-page";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-   hello world
-  </div>
-`;
+app.appendChild(createHeader());
