@@ -5,6 +5,18 @@ const createLogo = () => {
   return logo;
 };
 
+const createSocialMenu = () => {
+  const arr = ["faceBook", "instagram", "twitter"];
+  const ul = document.createElement("ul");
+
+  for (const i of arr) {
+    let li = document.createElement("li");
+    li.classList.add(i);
+    ul.appendChild(li);
+  }
+  return ul;
+};
+
 const createNavBar = () => {
   const navBar = document.createElement("nav");
 
@@ -32,6 +44,7 @@ const createHeader = () => {
 
   header.appendChild(createLogo());
   header.appendChild(createNavBar());
+  header.appendChild(createSocialMenu());
   return header;
 };
 
