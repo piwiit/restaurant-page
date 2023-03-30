@@ -1,0 +1,11 @@
+header {
+  margin-top: 16px;
+  background-image: url("https://laboussole-larochelle.fr/wp-content/uploads/2021/07/Dunkerque-v2-540-1-e1625907913443.jpg");
+  display: flex;
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

@@ -1,5 +1,2 @@
-#app{
-  div{
-    color:red ;
-  }
-}
+@forward "./abstracts/reset";
+@forward "./layout/main";
