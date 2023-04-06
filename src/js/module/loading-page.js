@@ -6,15 +6,16 @@ const createLogo = () => {
 };
 
 const createSocialMenu = () => {
-  const arr = ["faceBook", "instagram", "twitter"];
-  const ul = document.createElement("ul");
+  const arr = ["facebook", "instagram", "twitter"];
+  const div = document.createElement("div");
 
   for (const i of arr) {
-    let li = document.createElement("li");
-    li.classList.add(i);
-    ul.appendChild(li);
+    let a = document.createElement("a");
+    a.setAttribute("href", "#");
+    a.innerHTML = `<span>${i}</span>`;
+    div.appendChild(a);
   }
-  return ul;
+  return div;
 };
 
 const createNavBar = () => {
