@@ -1,6 +1,7 @@
 const createLogo = () => {
-  const logo = document.createElement('div');
+  const logo = document.createElement('img');
   logo.classList.add('logo');
+  logo.setAttribute('src', '../../picture/logo.png');
   return logo;
 };
 
@@ -11,6 +12,7 @@ const createNavBar = () => {
   const ul = document.createElement('ul');
   arr.forEach((element) => {
     const li = document.createElement('li');
+    li.classList.add(`nav-button-${arr.findIndex((content) => content === element)}`);
     li.textContent = element;
     ul.appendChild(li);
   });

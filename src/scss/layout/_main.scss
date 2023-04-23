@@ -1,0 +1,43 @@
+@import "../abstracts/colors";
+
+
+body{
+  height: 100vh;
+  width: 100%;
+  color: $primary-color;
+
+ 
+
+  header{
+    background-color:$nav-background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem 2rem;
+
+    .logo{
+      border-radius: 35px;
+    }
+
+    ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      & li{
+        padding: 2rem;
+        font-size: 2rem;
+        list-style: none;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      & li:hover{
+        transform: translateY(-10%);
+      }
+    }
+  }
+  
+}
