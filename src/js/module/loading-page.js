@@ -1,7 +1,19 @@
 const createLogo = () => {
   const logo = document.createElement('img');
   logo.classList.add('logo');
-  logo.setAttribute('src', '../../picture/logo.png');
+
+  const setAttributes = (el, options) => {
+    Object.keys(options).forEach(function (attr) {
+      el.setAttribute(attr, options[attr]);
+    });
+  };
+
+  setAttributes(logo, {
+    rel: 'preload',
+    src: '../../picture/logo.png',
+    alt: 'logo du restaurant madera sur un fond blanc',
+  });
+
   return logo;
 };
 
