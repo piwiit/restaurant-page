@@ -1,0 +1,5 @@
+@import "../abstracts/colors";
+
+.active{
+  border-bottom: 2px solid $primary-color;
+}

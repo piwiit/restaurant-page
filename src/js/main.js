@@ -1,4 +1,4 @@
 import '../scss/style.scss';
-import createHeader from './module/loading-page';
+import initializeWebsite from './module/loading-page';
 
-app.appendChild(createHeader());
+initializeWebsite();
