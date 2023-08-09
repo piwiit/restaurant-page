@@ -21,9 +21,12 @@ const createNavBar = () => {
       switch (target.textContent) {
         case 'Home':
           loadHome();
+          setActiveButton(target);
           break;
         case 'Menu':
           loadMenu();
+          setActiveButton(target);
+
           break;
         // Add more cases for other buttons if needed
       }
@@ -44,11 +47,13 @@ const createNavBar = () => {
 const setActiveButton = (button) => {
   const buttons = document.querySelectorAll('.nav-button');
   buttons.forEach((btn) => {
+    console.log();
     if (btn !== button) {
       btn.classList.remove('active');
     }
   });
   button.classList.add('active');
+  console.log(button);
 };
 
 const createHeader = () => {
@@ -58,9 +63,17 @@ const createHeader = () => {
   return header;
 };
 
+const createMain = () => {
+  const main = document.createElement('main');
+  main.classList.add('main');
+  return main;
+};
+
 const initializeWebsite = () => {
   const app = document.getElementById('app');
+
   app.appendChild(createHeader());
+  app.appendChild(createMain());
 };
 
 export default initializeWebsite;
