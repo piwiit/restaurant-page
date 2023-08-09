@@ -1,79 +1,66 @@
-import loadHome from "./home";
-import loadMenu from "./menu";
+import loadHome from './home';
+import loadMenu from './menu';
 
 const createLogo = () => {
-	const logo = document.createElement("img");
-	logo.classList.add("logo");
-
-	const setAttributes = (el, options) => {
-		Object.keys(options).forEach(function (attr) {
-			el.setAttribute(attr, options[attr]);
-		});
-	};
-
-	setAttributes(logo, {
-		rel: "preload",
-		src: "../../picture/logo.png",
-		alt: "logo du restaurant madera sur un fond blanc",
-	});
-
-	return logo;
+  const logo = document.createElement('img');
+  logo.classList.add('logo');
+  logo.setAttribute('rel', 'preload');
+  logo.setAttribute('src', '../../picture/logo.png');
+  logo.setAttribute('alt', 'logo du restaurant madera sur un fond blanc');
+  return logo;
 };
 
 const createNavBar = () => {
-	const arr = ["Home", "Menu", "Contact"];
-	const navBar = document.createElement("nav");
+  const arr = ['Home', 'Menu', 'Contact'];
+  const navBar = document.createElement('nav');
+  const ul = document.createElement('ul');
 
-	const ul = document.createElement("ul");
-	arr.forEach((element) => {
-		const li = document.createElement("li");
-		li.classList.add(
-			`nav-button-${arr.findIndex((content) => content === element)}`
-		);
-		li.textContent = element;
+  ul.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.tagName === 'LI') {
+      switch (target.textContent) {
+        case 'Home':
+          loadHome();
+          break;
+        case 'Menu':
+          loadMenu();
+          break;
+        // Add more cases for other buttons if needed
+      }
+    }
+  });
 
-		ul.appendChild(li);
-	});
+  arr.forEach((element) => {
+    const li = document.createElement('li');
+    li.classList.add(`nav-button-${arr.indexOf(element)}`);
+    li.textContent = element;
+    ul.appendChild(li);
+  });
 
-	ul.childNodes.forEach((element) => {
-		element.addEventListener("click", () => {
-			if (element.textContent === "Home") {
-				return loadHome();
-			} else if (element.textContent === "Menu") {
-				return loadMenu();
-			} else {
-				return;
-			}
-		});
-	});
-
-	navBar.appendChild(ul);
-	return navBar;
+  navBar.appendChild(ul);
+  return navBar;
 };
 
 const setActiveButton = (button) => {
-	const buttons = document.querySelectorAll(".nav-button");
-	buttons.forEach((button) => {
-		if (button != this) {
-			button.classList.remove("active");
-		}
-	});
-	button.classList.add("active");
+  const buttons = document.querySelectorAll('.nav-button');
+  buttons.forEach((btn) => {
+    if (btn !== button) {
+      btn.classList.remove('active');
+    }
+  });
+  button.classList.add('active');
 };
 
 const createHeader = () => {
-	const header = document.createElement("header");
-
-	header.appendChild(createLogo());
-	header.appendChild(createNavBar());
-
-	return header;
+  const header = document.createElement('header');
+  header.appendChild(createLogo());
+  header.appendChild(createNavBar());
+  return header;
 };
 
 const initializeWebsite = () => {
-	const app = document.getElementById("app");
-
-	app.appendChild(createHeader());
+  const app = document.getElementById('app');
+  app.appendChild(createHeader());
 };
 
 export default initializeWebsite;
