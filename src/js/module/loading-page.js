@@ -74,6 +74,7 @@ const initializeWebsite = () => {
 
   app.appendChild(createHeader());
   app.appendChild(createMain());
+  loadHome();
 };
 
 export default initializeWebsite;
