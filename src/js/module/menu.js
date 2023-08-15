@@ -1,17 +1,17 @@
 const createMenu = () => {
-  const menu = document.createElement('main');
-  menu.classList.add('menu');
+	const menu = document.createElement("main");
+	menu.classList.add("menu");
 
-  menu.textContent = 'menu';
+	menu.textContent = "menu";
 
-  return menu;
+	return menu;
 };
 
 const loadMenu = () => {
-  // const main = document.querySelector('main');
-  // main.textContent = '';
-  // main.appendChild(createMenu());
-  console.log('on menu function');
+	const main = document.querySelector(".main");
+	main.textContent = "";
+	main.appendChild(createMenu());
+	console.log("on menu function");
 };
 
 export default loadMenu;
