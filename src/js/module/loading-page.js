@@ -1,5 +1,6 @@
 import loadHome from './home';
 import loadMenu from './menu';
+import loadcontact from './contact';
 
 const ELEMENTS = ['Home', 'Menu', 'Contact'];
 
@@ -25,16 +26,17 @@ function createNavBar() {
   ul.addEventListener('click', (e) => {
     const target = e.target;
     if (target.tagName === 'LI') {
+      setActiveButton(target);
       switch (target.textContent) {
         case 'Home':
           loadHome();
-          setActiveButton(target);
           break;
         case 'Menu':
           loadMenu();
-          setActiveButton(target);
           break;
-        // Add more cases for other buttons if needed
+        case 'Contact':
+          loadcontact();
+          break;
       }
     }
   });
