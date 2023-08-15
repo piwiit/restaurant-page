@@ -1,5 +1,5 @@
 @import "../abstracts/colors";
-
+@import "./home";
 
 body{
   height: 100vh;
@@ -42,6 +42,15 @@ body{
         border-bottom: 2px solid $primary-color;
       }
     }
+  }
+
+  .main{
+    padding: 4rem;
+    margin: 6rem ;
+    margin-bottom: 6rem;
+    font-size: 2rem;
+    background-color: $background-light;
+    border: 1px solid $border-color;
   }
   
 }
