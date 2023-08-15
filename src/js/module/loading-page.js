@@ -45,15 +45,11 @@ const createNavBar = () => {
 };
 
 const setActiveButton = (button) => {
-  const buttons = document.querySelectorAll('.nav-button');
+  const buttons = document.querySelectorAll('li');
   buttons.forEach((btn) => {
-    console.log();
-    if (btn !== button) {
-      btn.classList.remove('active');
-    }
+    btn.classList.remove('active');
   });
   button.classList.add('active');
-  console.log(button);
 };
 
 const createHeader = () => {
