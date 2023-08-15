@@ -6,16 +6,16 @@ const ELEMENTS = ['Home', 'Menu', 'Contact'];
 function createLogo() {
   const logo = document.createElement('img');
   logo.classList.add('logo');
-  logo.setAttribute('rel', 'preload');
-  logo.setAttribute('src', '../../picture/logo.png');
-  logo.setAttribute('alt', 'logo du restaurant madera sur un fond blanc');
+  logo.src = '../../picture/logo.png';
+  logo.alt = 'logo du restaurant madera sur un fond blanc';
   return logo;
 }
 
 function setActiveButton(button) {
-  const buttons = document.querySelectorAll('li');
-  buttons.forEach((btn) => btn.classList.remove('active'));
-  button.classList.add('active');
+  //stock active class if we need to change class name
+  const activeClass = 'active';
+  document.querySelectorAll('li').forEach((btn) => btn.classList.remove(activeClass));
+  button.classList.add(activeClass);
 }
 
 function createNavBar() {
@@ -67,6 +67,7 @@ function initializeWebsite() {
   const app = document.getElementById('app');
   app.appendChild(createHeader());
   app.appendChild(createMain());
+  setActiveButton(document.querySelector('.nav-button-0'));
   loadHome();
 }
 
