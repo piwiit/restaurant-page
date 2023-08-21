@@ -50,7 +50,7 @@ const createMenu = () => {
       (pizza) => `
   <div class='card'>
       <img src="${pizza.picture}" alt="${pizza.name}">
-      <h2>${pizza.name}</h2>
+      <h4>${pizza.name}</h4>
       <p>${pizza.ingredients}</p>
   </div>
 `
