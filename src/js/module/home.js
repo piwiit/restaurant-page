@@ -23,7 +23,7 @@ const createParagraph = (text) => {
 };
 
 const loadHome = () => {
-  const main = document.querySelector('.main');
+  const main = document.querySelector('.main ');
   main.textContent = '';
   main.appendChild(createHome());
 };
