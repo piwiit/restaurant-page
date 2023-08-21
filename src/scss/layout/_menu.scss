@@ -13,9 +13,11 @@
     height: 300px;
     padding: 3rem;
     cursor: pointer;
+    transition: transform 0.3s ease;
+
 
     &:hover{
-      background-color: $background-hover;
+      transform: scale(1.1);
     }
 
     img{
