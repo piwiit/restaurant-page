@@ -1,0 +1,28 @@
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-radius: 5px;
+  background-color: $background-light;
+  font-size: 24px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+  }
+
+  i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 5px;
+  }
+  
+}
