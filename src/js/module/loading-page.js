@@ -65,10 +65,33 @@ function createMain() {
   return main;
 }
 
+function createFooter() {
+  const footer = document.createElement('footer');
+  footer.classList.add('footer');
+
+  const copyright = document.createElement('p');
+  copyright.textContent = `Copyright © ${new Date().getFullYear()} Piwiit`;
+
+  const gitHubLink = document.createElement('a');
+  gitHubLink.href = 'https://github.com/piwiit/';
+
+  const githubIcon = document.createElement('i');
+  githubIcon.classList.add('fab');
+  githubIcon.classList.add('fa-github');
+
+  footer.appendChild(copyright);
+  footer.appendChild(gitHubLink);
+  gitHubLink.appendChild(githubIcon);
+
+  return footer;
+}
+
 function initializeWebsite() {
   const app = document.getElementById('app');
   app.appendChild(createHeader());
   app.appendChild(createMain());
+  app.appendChild(createFooter());
+
   setActiveButton(document.querySelector('.nav-button-0'));
   loadHome();
 }
